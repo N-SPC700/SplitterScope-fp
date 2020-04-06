@@ -1,14 +1,15 @@
 <# : chooser.bat
-@echo off
+@echo off 
+set /p _songlength= Enter song length (Syntax: mm:ss):
 setlocal
 
 for /f "delims=" %%I in ('powershell -noprofile "iex (${%~f0} | out-string)"') do (
     	rem >replace the time with the song's length
 	rem >and replace the .sid name with the name of the song.
-	start /b sidplayfp -t4:30 -f96000 -wmaster %%~I
-	start /b sidplayfp -t4:30 -f96000 -wch1 -u2 -u3 %%~I
-	start /b sidplayfp -t4:30 -f96000 -wch2 -u1 -u3 %%~I
-	start /b sidplayfp -t4:30 -f96000 -wch3 -u2 -u1 %%~I
+	start /b sidplayfp -t"%_songlength%" -f96000 -wmaster %%~I
+	start /b sidplayfp -t"%_songlength%" -f96000 -wch1 -u2 -u3 %%~I
+	start /b sidplayfp -t"%_songlength%" -f96000 -wch2 -u1 -u3 %%~I
+	start /b sidplayfp -t"%_songlength%" -f96000 -wch3 -u2 -u1 %%~I
 )
 goto :EOF
 
