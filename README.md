@@ -1,5 +1,5 @@
 # SplitterScope-fp
-Windows batch file oscilloscope tool. Extremely hacky, so there's a few bugs.
+Windows batch file oscilloscope tool. A bit hacky, but it works.
 
 # Current Features:
 - 96000Hz Sample Rate
